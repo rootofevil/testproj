@@ -8,7 +8,12 @@ from  datetime import datetime
 import os
 
 app = FastAPI()
-app.mount("/thumbnail/static", StaticFiles(directory="static"), name="static")
+STATICDIR="static"
+
+if not os.path.isdir(STATICDIR):
+    os.mkdir(STATICDIR)
+
+app.mount("/thumbnail/static", StaticFiles(directory=STATICDIR), name="static")
 
 @app.post("/attributes")
 def read_attr(file: Annotated[bytes, File()]):
