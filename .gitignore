@@ -1,4 +1,4 @@
-api/static/*
+api/static/*.png
 example
 *.pyc
 launch.json
