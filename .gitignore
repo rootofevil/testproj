@@ -1,0 +1,4 @@
+api/static/*
+example
+*.pyc
+launch.json
